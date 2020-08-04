@@ -1,0 +1,18 @@
+[kubernetes-master-nodes]
+kubernetes-master ansible_host=172.31.104.81
+
+[kubernetes-worker-nodes]
+kubernetes-worker1 ansible_host=172.31.110.72
+kubernetes-worker2 ansible_host=172.31.97.68
+kubernetes-worker3 ansible_host=172.31.102.18
+
+
+[kubernetes:children]
+kubernetes-worker-nodes
+kubernetes-master-nodes
+
+[kubernetes:vars]
+ansible_sudo_pass='Lucky@143'
+ansible_password=Lucky@143
+ansible_ssh_user=cloud_user
+
